@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>POLCAR BI Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+🚛 POLCAR BI
+
+</div>
+
+<div class="version">
+
+v1.0
+
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="topPanel">
+
+<div class="pasteBox">
+
+<h2>Wklej okno dostaw z Cerbera</h2>
+
+<p>
+
+Ctrl+A → Ctrl+C → Ctrl+V
+
+</p>
+
+<textarea
+id="inputData"
+placeholder="Wklej tutaj dane..."></textarea>
+
+<button id="analyzeButton">
+
+ANALIZUJ DANE
+
+</button>
+
+</div>
+
+</div>
+
+<div class="kpiGrid">
+
+<div class="kpiCard">
+
+<div class="kpiTitle">
+
+DOSTAWY
+
+</div>
+
+<div id="deliveryCount" class="kpiValue">
+
+0
+
+</div>
+
+</div>
+
+<div class="kpiCard">
+
+<div class="kpiTitle">
+
+POZYCJE
+
+</div>
+
+<div id="positionCount" class="kpiValue">
+
+0
+
+</div>
+
+</div>
+
+<div class="kpiCard">
+
+<div class="kpiTitle">
+
+SZTUK
+
+</div>
+
+<div id="pieceCount" class="kpiValue">
+
+0
+
+</div>
+
+</div>
+
+<div class="kpiCard">
+
+<div class="kpiTitle">
+
+PRIORYTET >30
+
+</div>
+
+<div id="priorityCount" class="kpiValue">
+
+0
+
+</div>
+
+</div>
+
+</div>
+
+<div class="charts">
+
+<div class="chartCard">
+
+<h3>
+
+TOP Dostawcy
+
+</h3>
+
+<canvas id="supplierChart"></canvas>
+
+</div>
+
+<div class="chartCard">
+
+<h3>
+
+Stan dostaw
+
+</h3>
+
+<canvas id="statusChart"></canvas>
+
+</div>
+
+</div>
+
+<div class="searchPanel">
+
+<input
+
+type="text"
+
+id="searchInput"
+
+placeholder="Szukaj numeru dostawy, dostawcy lub uwag..."
+
+>
+
+</div>
+
+<div class="tableCard">
+
+<table id="deliveryTable">
+
+<thead>
+
+<tr>
+
+<th>Numer</th>
+
+<th>Dostawca</th>
+
+<th>Transport</th>
+
+<th>Pozycji</th>
+
+<th>Sztuk</th>
+
+<th>Priorytet</th>
+
+<th>Stan</th>
+
+<th>Typ</th>
+
+<th>Uwagi</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+</tbody>
+
+</table>
+
+</div>
+
+<div class="pagination">
+
+<button id="prevPage">
+
+Poprzednia
+
+</button>
+
+<span id="pageInfo">
+
+1 / 1
+
+</span>
+
+<button id="nextPage">
+
+Następna
+
+</button>
+
+</div>
+
+</div>
+
+<footer>
+
+POLCAR BI Dashboard
+
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
